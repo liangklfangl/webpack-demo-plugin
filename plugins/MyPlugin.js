@@ -15,9 +15,10 @@ HelloWorldPlugin.prototype.apply = function(compiler) {
    // console.log('----------compiler--------');
   // Setup callback for accessing a compilation:
   compiler.plugin("compilation", function(compilation) {
+     console.log('compilation------>',compilation.fileDependencies);
      compilation.plugin("chunk-hash", function(chunk, chunkHash) {
          chunk.modules.forEach(function(module,index){
-            console.log('chunk--->\\n',module);
+           // console.log('chunk--->\\n',module);
          });
      })
     // Now setup callbacks for accessing compilation steps:
